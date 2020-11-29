@@ -3,13 +3,15 @@
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-        <v-img
-          alt="Le carga"
-          contain
-          min-width="100"
-          src="./assets/lecarga-white.svg"
-          width="100"
-        />
+        <router-link to="/">
+          <v-img
+            alt="Le carga"
+            contain
+            min-width="100"
+            src="./assets/lecarga-white.svg"
+            width="100"
+          />
+        </router-link>
       </div>
     </v-app-bar>
     <v-main>

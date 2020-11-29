@@ -3,26 +3,41 @@
     <v-list-item-group v-model="group">
       <v-list-item>
         <v-list-item-title>
-          <v-btn outline color="primary" width="100%">Para conductores</v-btn>
-        </v-list-item-title>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-title>
-          <v-btn outline color="primary" width="100%"
-            >Para dueños de carro</v-btn
+          <router-link to="/">
+            <v-btn outline color="primary" width="100%" small>
+              <v-col align-self="start"> Para conductores </v-col>
+              <v-icon right>mdi-car-child-seat</v-icon>
+            </v-btn></router-link
           >
         </v-list-item-title>
       </v-list-item>
       <v-list-item>
         <v-list-item-title>
-          <v-btn outline color="primary" width="100%"
-            >Para dueños de carga</v-btn
-          >
+          <router-link to="/about">
+            <v-btn outline color="primary" width="100%" small>
+              <v-col align-self="start"> Dueños de carro </v-col>
+              <v-icon right>mdi-truck</v-icon>
+            </v-btn>
+          </router-link>
         </v-list-item-title>
       </v-list-item>
       <v-list-item>
         <v-list-item-title>
-          <v-btn outline color="primary" width="100%">Contactanos!</v-btn>
+          <router-link to="/about">
+            <v-btn outline color="primary" width="100%" small>
+              <v-col align-self="start">Proveedores de carga</v-col>
+              <v-icon right>mdi-package-down</v-icon>
+            </v-btn>
+          </router-link>
+        </v-list-item-title>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-title>
+          <router-link to="/about">
+            <v-btn outline color="primary" width="100%" small>
+              <v-icon>mdi-whatsapp</v-icon> Contactanos!</v-btn
+            >
+          </router-link>
         </v-list-item-title>
       </v-list-item>
     </v-list-item-group>
