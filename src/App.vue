@@ -2,10 +2,9 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
         <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
+          alt="Le carga"
           contain
           min-width="100"
           src="./assets/lecarga-white.svg"
@@ -14,48 +13,32 @@
       </div>
     </v-app-bar>
     <v-main>
-      <HelloWorld />
+      <v-navigation-drawer v-model="drawer" class="drawer" temporary>
+        <DrawerContent />
+      </v-navigation-drawer>
+      <router-view />
     </v-main>
-    <v-navigation-drawer v-model="drawer" absolute bottom temporary>
-      <v-list nav dense>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item>
-            <v-list-item-title>Foo</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import Vue from 'vue'
+import DrawerContent from './components/DrawerContent.vue'
 
 export default Vue.extend({
-  name: "App",
+  name: 'App',
 
   components: {
-    HelloWorld
+    DrawerContent
   },
 
   data: () => ({
     drawer: false
   })
-});
+})
 </script>
+<style>
+.drawer {
+  position: absolute;
+}
+</style>
