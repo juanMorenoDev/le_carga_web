@@ -1,10 +1,10 @@
 <template>
   <v-list nav dense>
-    <v-list-item-group v-model="group">
+    <v-list-item-group>
       <v-list-item>
         <v-list-item-title>
           <router-link to="/">
-            <v-btn outline color="primary" width="100%" small>
+            <v-btn color="primary" width="100%" small>
               <v-col align-self="start"> Para conductores </v-col>
               <v-icon right>mdi-car-child-seat</v-icon>
             </v-btn></router-link
@@ -14,7 +14,7 @@
       <v-list-item>
         <v-list-item-title>
           <router-link to="/about">
-            <v-btn outline color="primary" width="100%" small>
+            <v-btn color="primary" width="100%" small>
               <v-col align-self="start"> Dueños de carro </v-col>
               <v-icon right>mdi-truck</v-icon>
             </v-btn>
@@ -24,7 +24,7 @@
       <v-list-item>
         <v-list-item-title>
           <router-link to="/about">
-            <v-btn outline color="primary" width="100%" small>
+            <v-btn color="primary" width="100%" small>
               <v-col align-self="start">Proveedores de carga</v-col>
               <v-icon right>mdi-package-down</v-icon>
             </v-btn>
@@ -34,7 +34,7 @@
       <v-list-item>
         <v-list-item-title>
           <router-link to="/about">
-            <v-btn outline color="primary" width="100%" small>
+            <v-btn color="primary" width="100%" small>
               <v-icon>mdi-whatsapp</v-icon> Contactanos!</v-btn
             >
           </router-link>

@@ -2,7 +2,7 @@
   <v-form v-model="valid">
     <v-container>
       <v-row>
-        <v-col cols="12" md="4">
+        <v-col cols="4" md="3">
           <v-text-field
             v-model="firstname"
             :rules="nameRules"
@@ -10,7 +10,7 @@
             required
           ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="4" md="3">
           <v-text-field
             v-model="lastname"
             :rules="nameRules"
@@ -18,13 +18,20 @@
             required
           ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="4" md="3">
           <v-text-field
             v-model="email"
             :rules="emailRules"
             label="E-mail"
             required
           ></v-text-field>
+        </v-col>
+        <v-col cols="4" md="3">
+          <v-select
+            :items="carTypes"
+            v-model="carType"
+            label="Tipo de carro"
+          ></v-select>
         </v-col>
       </v-row>
     </v-container>
@@ -45,12 +52,14 @@ export default Vue.extend({
     valid: false,
     firstname: '',
     lastname: '',
+    carType: '',
     nameRules: [(v: string) => !!v || 'Campo requerido'],
     email: '',
     emailRules: [
       (v: string) => !!v || 'Campo requerido',
       (v: string) => /.+@.+/.test(v) || 'E-mail must be valid'
-    ]
+    ],
+    carTypes: ['Turbo', 'DobleTroque', 'Sencillo']
   })
 })
 </script>
