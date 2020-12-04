@@ -1,26 +1,27 @@
 <template>
-  <div class="bg_gray">
-    <div class="bg_blue card">
-      <div class="card_body">
-        <v-row>
-          <v-col cols="12" md="8">
-            <div class="card_title">¡Bienvenido a Le carga!</div>
-            <div class="card_text">
-              Logistica y estrategias de carga es una plataforma diseñada con el
-              objetivo principal de crear enlaces basados en la confianza entre
-              transportadores, propietarios de vehiculos de carga y empresas
-              generadoras de carga
+  <div class="color_blue">
+    <v-parallax src="@/assets/truckside.jpg">
+      <v-row>
+        <v-col cols="12" md="6">
+          <div class="card bg_blue">
+            <div class="card_body">
+              <div class="card_title title_font">
+                ¡Bienvenido a Le Carga!
+              </div>
+              <div class="card_text">
+                Logistica y estrategias de carga es una plataforma diseñada con
+                el objetivo principal de crear enlaces basados en la confianza
+                entre transportadores, propietarios de vehiculos de carga y
+                empresas generadoras de carga
+              </div>
+              <br />
             </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="text-center">
-              <img class="image" src="@/assets/shims-vue.d.svg" />
-            </div>
-          </v-col>
-        </v-row>
-      </div>
-    </div>
-    <div class="bg_gray signup">
+          </div>
+        </v-col>
+        <v-col cols="12" m="4"></v-col>
+      </v-row>
+    </v-parallax>
+    <div class="signup">
       <div class="card_body">
         <v-row>
           <v-col cols="12" md="3">
@@ -29,7 +30,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="9">
-            <div class="card_title">¡Registrate!</div>
+            <div class="card_title title_font">¡Registrate!</div>
             <div class="card_text">
               ¿Estas involucrado en el area del transporte? ¿Eres un proveedor
               de carga que necesita contratar transporte recurrentemente?
@@ -72,17 +73,20 @@ export default class Home extends Vue {
 .card {
   margin: 15px 20px;
   padding: 20px;
-  border-radius: 0.5%;
+  /* border-radius: 25px; */
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.color_blue {
+  color: #1976d2;
 }
 .card_body {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
 }
 .card_text {
-  font-size: 1.8em;
+  font-size: 1.5em;
   word-break: keep-all;
-  text-align: justify;
+  text-align: left;
 }
 .background {
   position: fixed;
@@ -90,8 +94,8 @@ export default class Home extends Vue {
   right: 0;
 }
 .card_title {
-  font-size: 4em;
-  font-weight: bold;
+  font-size: 2.5em;
+  font-weight: 400;
   margin: 0.2em 0;
 }
 .signup {

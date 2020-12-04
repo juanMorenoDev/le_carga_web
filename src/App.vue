@@ -12,7 +12,7 @@
         />
       </router-link>
     </v-app-bar>
-    <v-main class="bg_gray">
+    <v-main>
       <v-navigation-drawer v-model="drawer" absolute temporary>
         <DrawerContent />
       </v-navigation-drawer>
@@ -46,7 +46,14 @@ export default Vue.extend({
   background: lightgray;
   color: #1976d2;
 }
+.bg_transparent {
+  background: rgb(212, 212, 212, 0.6);
+  color: #1976d2;
+}
 .v-application {
   font-family: 'Epilogue', sans-serif !important;
+}
+.title_font {
+  font-family: 'Contrail One', cursive !important;
 }
 </style>
