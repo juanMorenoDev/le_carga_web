@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+    <v-app-bar app color="blue darken-4" height="70" dark>
+      <v-app-bar-nav-icon color="" @click.stop="drawer = !drawer" />
       <router-link to="/">
         <v-img
           alt="Le carga"
@@ -12,7 +12,7 @@
         />
       </router-link>
     </v-app-bar>
-    <v-main>
+    <v-main class="">
       <v-navigation-drawer v-model="drawer" absolute temporary>
         <DrawerContent />
       </v-navigation-drawer>
@@ -43,7 +43,7 @@ export default Vue.extend({
   color: white;
 }
 .bg_gray {
-  background: lightgray;
+  background: white;
   color: #1976d2;
 }
 .bg_transparent {

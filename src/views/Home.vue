@@ -1,9 +1,9 @@
 <template>
-  <div class="color_blue">
+  <div class="">
     <v-parallax src="@/assets/truckside.jpg">
       <v-row>
         <v-col cols="12" md="6">
-          <div class="card bg_blue">
+          <div class="">
             <div class="card_body">
               <div class="card_title title_font">
                 ¡Bienvenido a Le Carga!
@@ -37,6 +37,23 @@
               ¿Tienes un vehiculo de carga? ¿Eres un conductor de vehiculos de
               transporte de cualquier tipo?
             </div>
+            <v-row>
+              <v-btn color="primary" class="ma-1">
+                <v-col align-self="start"> Para conductores </v-col>
+                <v-icon right>mdi-car-child-seat</v-icon>
+              </v-btn>
+              <v-btn color="primary" class="ma-1">
+                <v-col align-self="start"> Dueños de carro </v-col>
+                <v-icon right>mdi-truck</v-icon>
+              </v-btn>
+              <v-btn color="primary" class="ma-1">
+                <v-col align-self="start">Proveedores de carga</v-col>
+                <v-icon right>mdi-package-down</v-icon>
+              </v-btn>
+              <v-btn color="primary" class="ma-1">
+                <v-icon>mdi-whatsapp</v-icon> Contactanos!</v-btn
+              >
+            </v-row>
           </v-col>
         </v-row>
       </div>
@@ -94,7 +111,7 @@ export default class Home extends Vue {
   right: 0;
 }
 .card_title {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: 400;
   margin: 0.2em 0;
 }
