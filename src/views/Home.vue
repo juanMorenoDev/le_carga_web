@@ -37,28 +37,29 @@
               ¿Tienes un vehiculo de carga? ¿Eres un conductor de vehiculos de
               transporte de cualquier tipo?
             </div>
-            <v-row>
-              <v-btn color="primary" class="ma-1">
+            <br />
+            <v-row class="buttons-row">
+              <v-btn color="primary" class="ma-1" :width="width">
                 <v-col align-self="start"> Para conductores </v-col>
                 <v-icon right>mdi-car-child-seat</v-icon>
               </v-btn>
-              <v-btn color="primary" class="ma-1">
+              <v-btn color="primary" class="ma-1" :width="width">
                 <v-col align-self="start"> Dueños de carro </v-col>
                 <v-icon right>mdi-truck</v-icon>
               </v-btn>
-              <v-btn color="primary" class="ma-1">
+              <v-btn color="primary" class="ma-1" :width="width">
                 <v-col align-self="start">Proveedores de carga</v-col>
                 <v-icon right>mdi-package-down</v-icon>
               </v-btn>
-              <v-btn color="primary" class="ma-1">
-                <v-icon>mdi-whatsapp</v-icon> Contactanos!</v-btn
-              >
+              <v-btn color="primary" class="ma-1" :width="width">
+                Contactanos! <v-icon>mdi-whatsapp</v-icon>
+              </v-btn>
             </v-row>
           </v-col>
         </v-row>
       </div>
     </div>
-    <Form />
+    <!-- <Form /> -->
   </div>
 </template>
 
@@ -77,24 +78,25 @@ import DrawerContent from '@/components/DrawerContent.vue'
 })
 export default class Home extends Vue {
   message = 'Hello from lecarga'
+  get width(): string {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs':
+        return '100%'
+      case 'sm':
+        return '100%'
+      default:
+        return 'auto'
+    }
+  }
 }
 </script>
 <style scoped>
-.bold {
-  font-weight: bold;
+.buttons-row {
+  justify-content: center;
 }
 .image {
   margin-top: 20px;
   width: 400px;
-}
-.card {
-  margin: 15px 20px;
-  padding: 20px;
-  /* border-radius: 25px; */
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-.color_blue {
-  color: #1976d2;
 }
 .card_body {
   display: flex;
@@ -105,11 +107,6 @@ export default class Home extends Vue {
   word-break: keep-all;
   text-align: left;
 }
-.background {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
 .card_title {
   font-size: 3em;
   font-weight: 400;
@@ -119,9 +116,6 @@ export default class Home extends Vue {
   margin: 40px 60px 40px 40px;
 }
 @media (max-width: 500px) {
-  .card {
-    margin: 10px 10px;
-  }
   .card_title {
     font-size: 2em;
   }
