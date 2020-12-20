@@ -6,7 +6,7 @@
       color="primary"
       class="ma-1"
       :width="width"
-      @click="toRegistration(button.pathName)"
+      :to="button.pathName"
       :small="small"
     >
       <v-col align-self="start">{{ button.label }}</v-col>
@@ -30,11 +30,6 @@ export default Vue.extend({
     },
     small: {
       type: Boolean
-    }
-  },
-  methods: {
-    toRegistration(path: string) {
-      this.$router.push(path)
     }
   },
   computed: {

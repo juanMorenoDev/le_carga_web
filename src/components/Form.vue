@@ -36,6 +36,16 @@
             outlined
           ></v-select>
         </v-col>
+        <v-col>
+          <v-btn
+            color="primary"
+            exact-active-class="class"
+            to="/"
+            type="submit"
+          >
+            Registrar
+          </v-btn>
+        </v-col>
       </v-row>
     </v-container>
   </v-form>
