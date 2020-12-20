@@ -38,56 +38,26 @@
               transporte de cualquier tipo?
             </div>
             <br />
-            <v-row class="buttons-row">
-              <v-btn color="primary" class="ma-1" :width="width">
-                <v-col align-self="start"> Para conductores </v-col>
-                <v-icon right>mdi-car-child-seat</v-icon>
-              </v-btn>
-              <v-btn color="primary" class="ma-1" :width="width">
-                <v-col align-self="start"> Dueños de carro </v-col>
-                <v-icon right>mdi-truck</v-icon>
-              </v-btn>
-              <v-btn color="primary" class="ma-1" :width="width">
-                <v-col align-self="start">Proveedores de carga</v-col>
-                <v-icon right>mdi-package-down</v-icon>
-              </v-btn>
-              <v-btn color="primary" class="ma-1" :width="width">
-                Contactanos! <v-icon>mdi-whatsapp</v-icon>
-              </v-btn>
-            </v-row>
+            <ButtonsRow :buttons="buttons" />
           </v-col>
         </v-row>
       </div>
     </div>
-    <!-- <Form /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-import Form from '@/components/Form.vue' // @ is an alias to /src
-import DrawerContent from '@/components/DrawerContent.vue'
+import ButtonsRow from '@/components/ButtonsRow.vue'
+import buttons from '@/const/buttons'
 
 @Component({
   components: {
-    HelloWorld,
-    Form,
-    DrawerContent
+    ButtonsRow
   }
 })
 export default class Home extends Vue {
-  message = 'Hello from lecarga'
-  get width(): string {
-    switch (this.$vuetify.breakpoint.name) {
-      case 'xs':
-        return '100%'
-      case 'sm':
-        return '100%'
-      default:
-        return 'auto'
-    }
-  }
+  buttons = buttons
 }
 </script>
 <style scoped>

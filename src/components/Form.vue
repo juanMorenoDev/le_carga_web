@@ -7,7 +7,7 @@
             v-model="firstname"
             :rules="nameRules"
             label="Nombre Completo"
-            required
+            outlined
           ></v-text-field>
         </v-col>
         <v-col cols="4" md="3">
@@ -16,6 +16,7 @@
             :rules="nameRules"
             label="Numero de telefono"
             required
+            outlined
           ></v-text-field>
         </v-col>
         <v-col cols="4" md="3">
@@ -24,6 +25,7 @@
             :rules="emailRules"
             label="E-mail"
             required
+            outlined
           ></v-text-field>
         </v-col>
         <v-col cols="4" md="3">
@@ -31,6 +33,7 @@
             :items="carTypes"
             v-model="carType"
             label="Tipo de carro"
+            outlined
           ></v-select>
         </v-col>
       </v-row>
