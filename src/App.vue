@@ -13,7 +13,7 @@
       </router-link>
     </v-app-bar>
     <v-main class="">
-      <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-navigation-drawer v-model="drawer" fixed>
         <DrawerContent />
       </v-navigation-drawer>
       <router-view />

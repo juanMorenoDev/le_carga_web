@@ -7,6 +7,7 @@
       class="ma-1"
       :width="width"
       @click="toRegistration(button.pathName)"
+      :small="small"
     >
       <v-col align-self="start">{{ button.label }}</v-col>
       <v-icon right>{{ button.icon }}</v-icon>
@@ -23,6 +24,12 @@ export default Vue.extend({
   props: {
     buttons: {
       type: Array as () => ButtonProps[]
+    },
+    fullWidth: {
+      type: Boolean
+    },
+    small: {
+      type: Boolean
     }
   },
   methods: {
@@ -32,13 +39,17 @@ export default Vue.extend({
   },
   computed: {
     width(): string {
-      switch (this.$vuetify.breakpoint.name) {
-        case 'xs':
-          return '100%'
-        case 'sm':
-          return '100%'
-        default:
-          return 'auto'
+      if (this.fullWidth) {
+        return '100%'
+      } else {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs':
+            return '100%'
+          case 'sm':
+            return '100%'
+          default:
+            return 'auto'
+        }
       }
     }
   }
