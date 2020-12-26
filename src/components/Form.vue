@@ -2,7 +2,7 @@
   <v-form v-model="valid">
     <v-container>
       <v-row>
-        <v-col cols="4" md="3">
+        <v-col cols="12" md="4">
           <v-text-field
             v-model="firstname"
             :rules="nameRules"
@@ -10,7 +10,7 @@
             outlined
           ></v-text-field>
         </v-col>
-        <v-col cols="4" md="3">
+        <v-col cols="12" md="4">
           <v-text-field
             v-model="lastname"
             :rules="nameRules"
@@ -19,7 +19,7 @@
             outlined
           ></v-text-field>
         </v-col>
-        <v-col cols="4" md="3">
+        <v-col cols="12" md="4">
           <v-text-field
             v-model="email"
             :rules="emailRules"
@@ -28,13 +28,40 @@
             outlined
           ></v-text-field>
         </v-col>
-        <v-col cols="4" md="3">
-          <v-select
-            :items="carTypes"
-            v-model="carType"
-            label="Tipo de carro"
+        <v-col cols="12" md="6">
+          <div>
+            Por favor seleccione la ciudad o ciudades en las que opera
+            principalmente, escriba tantas como quiera separados por coma o la
+            tecla enter
+          </div>
+          <v-combobox
+            v-model="cities"
+            hide-selected
+            :items="initialCities"
+            label="Ciudades donde opera"
+            multiple
             outlined
-          ></v-select>
+            chips
+            deletable-chips
+            :delimiters="[',']"
+          />
+        </v-col>
+        <v-col cols="12" md="6">
+          <div>
+            Por favor seleccione el tipo o tipos de carro que posee, escriba
+            tantos como quiera separados por coma o la tecla enter
+          </div>
+          <v-combobox
+            v-model="carTypes"
+            hide-selected
+            :items="initialCarTypes"
+            label="Typos de carro que posee"
+            multiple
+            outlined
+            chips
+            deletable-chips
+            :delimiters="[',']"
+          />
         </v-col>
         <v-col>
           <v-btn
@@ -72,7 +99,19 @@ export default Vue.extend({
       (v: string) => !!v || 'Campo requerido',
       (v: string) => /.+@.+/.test(v) || 'E-mail must be valid'
     ],
-    carTypes: ['Turbo', 'DobleTroque', 'Sencillo']
+    initialCarTypes: ['Turbo', 'DobleTroque', 'Sencillo'],
+    initialCities: [
+      'Ibague',
+      'Medellin',
+      'Bogota',
+      'Barranquilla',
+      'Villavicencio',
+      'Santa Marta'
+    ],
+    cities: [],
+    carTypes: [],
+    value: '',
+    value2: ''
   })
 })
 </script>

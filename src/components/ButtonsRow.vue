@@ -3,8 +3,9 @@
     <v-btn
       v-for="(button, index) in buttons"
       :key="index"
-      color="primary"
+      color="blue darken-4"
       class="ma-1"
+      :style="{ color: 'white' }"
       :width="width"
       :to="button.pathName"
       :small="small"

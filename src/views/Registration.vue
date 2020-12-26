@@ -1,6 +1,6 @@
 <template>
   <div class="position">
-    <v-img src="@/assets/road.jpg" position="center">
+    <v-img src="@/assets/road.jpg" position="center" max-height="100%">
       <div class="image_container">
         <Form />
       </div>
@@ -17,9 +17,7 @@ import Form from '@/components/Form.vue' // @ is an alias to /src
     Form
   }
 })
-export default class Registration extends Vue {
-  message = 'Hello from lecarga'
-}
+export default class Registration extends Vue {}
 </script>
 <style scoped>
 .image_container {
@@ -28,11 +26,13 @@ export default class Registration extends Vue {
   flex-flow: column;
   height: 100vh;
   width: 100vw;
+  overflow: auto;
 }
 .position {
   position: fixed;
   top: 0;
   height: 100vh;
   width: 100vw;
+  overflow: auto;
 }
 </style>
