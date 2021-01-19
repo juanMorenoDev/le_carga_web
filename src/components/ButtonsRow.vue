@@ -1,5 +1,5 @@
 <template>
-  <v-row class="buttons-row">
+  <v-row>
     <v-btn
       v-for="(button, index) in buttons"
       :key="index"

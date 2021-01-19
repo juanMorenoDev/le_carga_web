@@ -1,6 +1,7 @@
 <template>
-  <div class="drawer">
-    <ButtonsRow :buttons="buttons" fullWidth small />
+  <div>
+    <v-app-bar color="blue darken-4" height="70" />
+    <ButtonsRow :buttons="buttons" fullWidth small class="drawer" />
   </div>
 </template>
 <script lang="ts">
@@ -20,7 +21,6 @@ export default Vue.extend({
 <style scoped>
 .drawer {
   margin: 10px auto;
-  padding: 10px;
   width: 90%;
 }
 </style>

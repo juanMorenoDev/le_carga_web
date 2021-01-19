@@ -8,6 +8,8 @@
             :rules="nameRules"
             label="Nombre Completo"
             outlined
+            solo
+            filled
           ></v-text-field>
         </v-col>
         <v-col cols="12" md="4">
@@ -17,6 +19,8 @@
             label="Numero de telefono"
             required
             outlined
+            solo
+            filled
           ></v-text-field>
         </v-col>
         <v-col cols="12" md="4">
@@ -26,9 +30,33 @@
             label="E-mail"
             required
             outlined
+            solo
+            filled
           ></v-text-field>
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="4" md="2">
+          <v-select
+            v-model="idType"
+            :items="idTypeItems"
+            label="Tipo de documento"
+            required
+            solo
+            outlined
+            filled
+          ></v-select>
+        </v-col>
+        <v-col cols="8" md="4">
+          <v-text-field
+            v-model.number="idNumber"
+            :rules="numberRules"
+            label="Numero"
+            required
+            outlined
+            solo
+            filled
+          ></v-text-field>
+        </v-col>
+        <v-col cols="12" md="12">
           <div>
             Por favor seleccione la ciudad o ciudades en las que opera
             principalmente, escriba tantas como quiera separados por coma o la
@@ -41,12 +69,14 @@
             label="Ciudades donde opera"
             multiple
             outlined
+            filled
+            solo
             chips
             deletable-chips
             :delimiters="[',']"
           />
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="12">
           <div>
             Por favor seleccione el tipo o tipos de carro que posee, escriba
             tantos como quiera separados por coma o la tecla enter
@@ -58,6 +88,8 @@
             label="Typos de carro que posee"
             multiple
             outlined
+            filled
+            solo
             chips
             deletable-chips
             :delimiters="[',']"
@@ -94,11 +126,16 @@ export default Vue.extend({
     lastname: '',
     carType: '',
     nameRules: [(v: string) => !!v || 'Campo requerido'],
+    numberRules: [
+      (v: number) => !!v || 'Campo requerido',
+      (v: number) => typeof v === 'number' || 'Debe ser un numero'
+    ],
     email: '',
     emailRules: [
       (v: string) => !!v || 'Campo requerido',
-      (v: string) => /.+@.+/.test(v) || 'E-mail must be valid'
+      (v: string) => /.+@.+/.test(v) || 'E-mail debe ser valido'
     ],
+    idTypeItems: ['CC', 'NIT'],
     initialCarTypes: ['Turbo', 'DobleTroque', 'Sencillo'],
     initialCities: [
       'Ibague',
@@ -110,8 +147,8 @@ export default Vue.extend({
     ],
     cities: [],
     carTypes: [],
-    value: '',
-    value2: ''
+    idType: '',
+    idNumber: null
   })
 })
 </script>
